@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array recebe números</title>
+</head>
+<body>
+    <h1>Vamos criar uma array</h1>
+    <p id = 'res'>
+        
+    </p>
+    
+    <script>
+        let num =Number(window.prompt('Digite um número'))
+        let itens = []
+       for (let i=1;i <=num;i++){
+           let n =Number(window.prompt('Digite o  numero'))
+           itens.push(n)
+       } 
+        document.getElementById('res').innerHTML =`O array digitado é ${itens} e o seu inverso é ${itens.reverse()}`
+     </script>
+</body>
+</html>

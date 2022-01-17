@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origem</title>
+    <style>
+        body {
+            background-color: rgb(211, 122, 59);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+    </style>
+</head>
+<h1>Pesquisa de nacionalidade</h1>
+<body>
+    Digite o país de nascimento: <input type="text" name="nac" id='paisdig'> <input type="button" value="verificar" onclick="check()">
+    
+    <div id='res'></div>
+    <script>
+        function check() {
+            var pais = document.getElementById('paisdig') // variavel capta o digitado no input
+            var res = document.getElementById('res')
+            var pais2 = pais.value // transforma em variavel a ser usada na função
+            if (pais2 == 'Brasil') {
+                res.innerHTML = 'Voce é brasileiro'}
+            else { res.innerHTML = ' Voce é estrangeiro'}
+            
+            } 
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento onchange</title>
+</head>
+<body>
+    <h2>Eventos em HTML e JS</h2>
+    Digite o seu nome: <input type="text" id="fname" onchange="upperCase()">
+    <p>Quando deixar o campo de entrada de dados, uma função se encarregará de transformar o texto em maiusculas</p>
+    <script>
+        function upperCase(){
+            var x = window.document.getElementById('fname')
+            x.value = x.value.toUpperCase()
+        }
+    </script>
+</body>
+</html>

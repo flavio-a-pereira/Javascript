@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>47</title>
+</head>
+<body>
+    <p>Write a JavaScript program to check whether a given number is presents in the range 40..10000.</p>
+    <p id='res'></p>
+    <script>
+        let a = 62
+
+        document.getElementById('res').innerHTML = checar(a)        
+
+        function checar(x) {
+            if(((x && (x * 100)) > 40) && ((x && (x * 100)) < 10000)) {
+                return true
+            } else {
+                return false
+            }
+        }
+    </script>
+</body>
+</html>

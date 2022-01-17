@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de calculo de comissao</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Calculo de comissao</h1>
+    </header>
+    <section>
+        <div>
+            Qual o valor do faturamento?
+            <input type="number" name='faturamento' id='fat'>
+        </div>
+        <div>
+            <p>
+                <input type="radio" name="tipo" id='car'>
+                <label for="car">Carta</label>
+                <input type="radio" name="tipo" id='pac'>
+                <label for="parc">Pacote</label>
+            </p>
+            <p>
+                <input type="button" value="Click" onclick="calcular()">
+            </p>
+            <p id='res'></p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; CursoemVideo</p>
+    </footer>
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>

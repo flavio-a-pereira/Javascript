@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <P>Ache os anos bissextos a partir de 1970</P>
+    <p><input type="date" name="inicio" id="dinicio">Data inicial </p>
+    <p><input type="date" name="fim" id="dfim">Data final</p>
+    <button onclick="ver()">Click</button>
+    <p id='demo'></p>
+    <script>
+        function ver() {
+        let inicio = document.getElementById('dinicio').value
+        let fim = document.getElementById('dfim').value
+        let x = Date.parse(inicio)
+        let y = Date.parse(fim)
+        let z = y - x
+        let milidia = 1000 * 60 * 60 * 24
+        let m = (z / milidia) + 1
+        
+          if (m == 366){
+            document.getElementById('demo').innerHTML ='O ano de ' + inicio.substring(0,4) + ' é bissexto '
+          }else {
+            document.getElementById('demo').innerHTML = 'O ano de ' + inicio.substring(0,4) + ' não é bissexto'
+          }
+        
+        }
+    </script>
+</body>
+</html>

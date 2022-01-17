@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Digite uma palavra:</p>
+    <p><input type="text" name="nome" id="nome"></p>
+    <p>Digite qual posição a ser retirada:</p>
+    <p><input type="number" name="numero" id="num"></p>
+    <p><button onclick="clicar()">Click</button></p>
+    <p id='res'></p>
+    <script>
+           function clicar(){
+               let str = document.getElementById('nome').value
+               let nr = Number(document.getElementById('num').value)
+               let txt = ''
+               let txt1 = ''
+
+                  function retirar(posicao,palavra) {
+                      txt = palavra.substring(0,posicao) 
+                      txt1 = palavra.substring(posicao + 1, palavra.length)
+                      return txt + txt1
+                  }               
+               document.getElementById('res').innerHTML = retirar(nr,str)
+    
+           }
+    </script>
+</body>
+</html>

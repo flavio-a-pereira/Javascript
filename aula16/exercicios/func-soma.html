@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de números</title>
+</head>
+<body>
+    <p>Receba tres números:</p>
+    <p id='res'></p>
+    <script>
+        let n1 = Number(window.prompt('Digite o primeiro número:'))
+        let n2 = Number(window.prompt('Digite o segundo número:'))
+        let n3 = Number(window.prompt('Digite o terceiro número'))
+        function soma(n1,n2,n3) {
+            let soma = n1 + n2 + n3
+            return soma
+        }
+        
+        function media() {
+            let media = soma(n1,n2,n3) / 3
+            return media
+        }
+
+    document.getElementById('res').innerHTML = `A soma de ${n1}, ${n2} e ${n3} é igual a ` + soma(n1,n2,n3) + ' e a média deste valores é igual a ' + media() + '.'
+
+
+    </script>
+</body>
+</html>

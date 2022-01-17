@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numero perfeito</title>
+</head>
+<body>
+    <h1>Descobrir números perfeitos</h1>
+    <p>
+        Um número é dito perfeito quando ele é igual a soma de seus fatores. Por exemplo, os fatores de 6 são 1, 2 e 3 (ou seja, podemos dividir 6 por 1, por 2 e por 3) e 6=1+2+3, logo 6 é um número perfeito. Escreva uma função que recebe um inteiro e dizer se é perfeito ou não. Em outra função, peça um inteiro n e mostre todos os números perfeitos até n.
+    </p>
+    <p>
+        Digite o número:
+        <input type="number" name="num" id="num">
+        <input type="button" value="Checar" onclick="checar()">
+    </p>
+    <div id='res'>
+        O resultado vai aparecer aqui:
+    </div>
+    <script>
+        let txtnum = document.getElementById('num')  
+        let divisores=[]
+        let res = document.querySelector('div#res')
+
+        function checar() {
+            let n = Number(txtnum.value)
+          
+            for (let c = 1;c< n;c++){    
+                if(n%c==0) {
+                divisores.push(c)
+                }                  
+            }
+
+            let soma = 0
+            for (let i in divisores){
+                soma +=divisores[i]
+            }
+            let texto = ''
+            if(soma == n){
+                texto = 'é perfeito'
+            }else {
+                texto = 'nao é'
+            }
+           
+            res.innerHTML += `${divisores} `
+            res.innerHTML += `${soma} `
+            res.innerHTML += texto
+        }
+
+    </script>
+</body>
+</html>

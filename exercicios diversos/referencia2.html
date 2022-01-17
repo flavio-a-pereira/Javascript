@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Exemplo de forEach()</p>
+    <p id='res'></p>
+    <p>Exemplo de map() com join()</p>
+    <p id='res1'></p>
+  
+  <script>
+     const nomes= ["MARIA","MARCO","JOHN"]
+     nomes.forEach(myFunction)
+
+     function myFunction(item,index,arr) {
+         arr[index] = item.toLowerCase()
+     }
+     document.getElementById('res').innerHTML = nomes
+
+     const itens = [
+         {nome:"Abel", sobrenome:" da Silva"},
+         {nome:"José", sobrenome:" Magalhães"},
+         {nome:"Daise", sobrenome:" Nogueira"}
+     ]
+     function juntar(item){
+         return [item.nome, item.sobrenome].join (" ")
+     }
+     document.getElementById('res1').innerHTML = itens.map(juntar)
+  </script>  
+</body>
+</html>

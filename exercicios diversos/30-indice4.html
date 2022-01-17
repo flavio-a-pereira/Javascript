@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30</title>
+</head>
+<body>
+    <p>Write a JavaScript program to check whether a string "Script" presents at 5th (index 4) position in a given string, if "Script" presents in the string return the string without "Script" otherwise return the original one. </p>
+    <p><input type="text" name="nome" id="nome"></p>
+    <button onclick="clicar()">Click</button>
+    <p id='res'></p>
+    <script>
+        function clicar() {
+            let str = document.getElementById('nome').value
+           
+           function checar(palavra){
+            let dada = "Script"
+            let ver = palavra.substring(4,10)
+            if(ver == dada) {
+                return palavra.substr(0,4) + palavra.slice(10)
+            }else {
+                return palavra
+            }
+
+           }
+            document.getElementById('res').innerHTML = checar(str)
+        }
+    </script>
+</body>
+</html>

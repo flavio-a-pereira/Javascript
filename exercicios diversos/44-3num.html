@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>44</title>
+</head>
+<body>
+    <p>Write a JavaScript program to check from three given integers that whether a number is greater than or equal to 20 and less than one of the others.</p>
+    <p id='res'></p>
+    <script>
+        let a = 10
+        let b = 100
+        let c = 11
+          
+         document.getElementById('res').innerHTML = checar(a,b,c)
+
+        function checar(x,y,z) {
+            if((x >= 20 && (x < y || x < z )) || (y >= 20 && (y < x || y < z)) || (z >= 20 && (z < x || z <y))) {
+                return true
+            } else {
+                return false
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35</title>
+</head>
+<body>
+    <p> Write a program to check whether a specified character exists within the 2nd to 4th position in a given string.</p>
+    <p>String <input type="text" name="string" id="str"></p>
+    <p>Character <input type="text" name="car" id="car"></p>
+    <p id='res'></p>
+    <button onclick="clicar()">Click</button>
+    <script>
+         function clicar() {
+             let str = document.getElementById('str').value
+             let car = document.getElementById('car').value
+             
+              function checar(x,palavra) {
+                  let ctr = 0
+                   for( let i = 0;i < palavra.length; i++){
+                       if((palavra.charAt(i) == x) && (i >= 1 && i <= 3)){
+                       ctr = 1
+                       break
+                       }
+                    }
+                    
+                       if(ctr == 1){
+                           return true
+                      }else {
+                      return false
+                      }
+                    }
+                if(str.length != 0 && car.length != 0){
+                    document.getElementById('res').innerHTML = checar(car,str)  
+                } else {
+                    window.alert('Preencha todos os campos')
+                }      
+                    
+            }
+        
+        
+    </script>
+</body>
+</html>

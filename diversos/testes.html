@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar status da imagem</title>
+</head>
+<body>
+    <h2>O que o JavaScript pode fazer?</h2>
+    <p>O JavaScript pode mudar um atributo HTML.</p>
+
+    <p>Neste exemplo, o JavaScript muda o valor src da source na imagem da lampada</p>
+
+    <button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Ligar</button>
+
+    <img id="myImage" src="pic_bulboff.gif" alt="apagada" style="width: 100px">
+
+    <button onclick="document.getElementById('myImage').src='pic_bulboff.gif'"">Desligar</button>
+
+    <h2>JavaScript HTML DOM</h2>
+    <p>Como usar o getElement By tag name </p>
+    <p>Este exemplo demonstra como usar o comando <strong>getElementByTagName</strong></p>
+    <p>Ele cria um id associado ao primeiro parágrafo, cria uma constante que usa o comando acima, concatena na tela um texto com a chamada desta constante</p>
+    <p id="demo"></p>
+    <script>
+        var elemento = window.document.getElementsByTagName("p")
+        window.document.getElementById("demo").innerHTML = 'O texto do primeiro parágrafo é :' + elemento[2].innerHTML
+    </script>
+    
+</body> 
+</html>

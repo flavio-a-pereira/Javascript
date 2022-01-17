@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício com if e else</title>
+    <style>
+        div {
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+   <h1>Vamos calcular!</h1> 
+   <p>Digite o valor da primeira nota: <input type="text" name="txta" id="a"> </p>
+   <p>Digite o valor da segunda nota: <input type="text" name="txtb" id="b"></p> 
+   <div id='res'></div> 
+   <p><input type="button" value="Resultado" onclick="calcular()"></p>
+   <script>
+       function calcular(){
+       var gtxta = document.getElementById('a')
+       var a = Number(gtxta.value)
+       var gtxtb = document.getElementById('b')
+       var b = Number(gtxtb.value)
+       var res = document.getElementById('res')
+       var c = (a + b)/ 2
+        if (c >= 7){
+            res.innerHTML = `Voce está aprovado e sua média final é ${c}`
+        } else {
+            res.innerHTML = `Voce está reprovado pois a sua média final é ${c}`
+        }
+    }
+   </script>
+</body>
+</html>
