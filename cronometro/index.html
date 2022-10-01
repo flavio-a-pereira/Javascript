@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometro</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+
+     <h1>Cronômetro progressivo </h1>
+    
+    <!--criação de estrutura do cronometro com tags inline level <span>-->
+    <div id = 'cron'> 
+        <span id="hour">00</span>:
+        <span id="minute">00</span>:
+        <span id="second">00</span>:
+        <span id="milisec">000</span> 
+    </div>
+    
+    <div id='botoes'>
+
+        <button onclick="start()">Start</button>
+        <button onclick="pause()">Pause</button>
+        <button onclick="reset()">Reset</button>
+
+    </div>
+    
+
+    <script>
+      let hour = 0;
+      let minute = 0;
+      let second = 0;
+      let milisec = 000;
+      let cron 
+      /* criação das funções para os botoes funcionarem*/
+
+        /* a funcao start comeca com pause para limpa-la e não rodar mais de uma funcao start no fundo e setinterval a cada 10 milisegundos*/
+      function start() {
+          pause();
+          cron = setInterval(timer, 10)  
+      }
+      function pause() {
+          clearInterval(cron);
+      }
+      function reset() {
+       hour = 0;
+       minute = 0;
+       second = 0;
+       milisec = 0;
+
+       document.getElementById('hour').innerText = '00';
+       document.getElementById('minute').innerText = '00';
+       document.getElementById('second').innerText ='00';
+       document.getElementById('milisec').innerText ='000';
+      }
+
+        /* a parte mais importante é a funcao timer que é responsavel pela iteracao da funcao start*/
+      function timer() {
+          if((milisec +=10) == 1000) {
+              milisec = 0;
+              second ++;
+          }
+          if(second == 60) {
+              second = 0;
+              minute ++;
+          }
+          if(minute == 60) {
+              minute = 0;
+              hour ++;
+          }
+          document.getElementById('hour').innerHTML = hour;
+          document.getElementById('minute').innerHTML = minute;
+          document.getElementById('second').innerHTML = second;
+          document.getElementById('milisec').innerHTML = milisec;
+
+      }
+
+       
+       
+
+    </script>
+</body>
+</html>

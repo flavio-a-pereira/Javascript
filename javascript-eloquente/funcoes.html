@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function min(a,b) {
+        return Math.min(a,b)
+       }
+       console.log(min(5,4))
+       
+       function isEven(num) {
+           if(num == 0) {
+               return true
+           } else if(num == 1) {
+               return false
+           } else if ((num%2 == 0) && (num > 0)){
+               let novoNum = num - 2
+              return isEven(novoNum)
+           } else {
+               return false
+           }   
+         }
+         console.log(isEven(100))
+
+        function countBs(string) {
+            var counter = 0
+            for( var i = 0; i <= string.length-1; i ++) {
+                if(string.charAt(i) === 'B'){
+                     counter += 1
+                }
+            } 
+            return counter 
+        } 
+        console.log(countBs('BBC'))
+
+        function countChar(string,char) {
+            var counter = 0
+            for (var i = 0; i <= string.length-1;i ++){
+                if(string.charAt(i) === char){
+                    counter += 1
+                }
+            }
+            return counter
+        }
+        console.log(countChar('kakkerlak', 'k'))
+
+    </script>
+</body>
+</html>

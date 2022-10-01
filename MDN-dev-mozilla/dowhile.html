@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do while</title>
+</head>
+<body>
+    <div id="res"></div>
+
+    <script>
+        var codigo = ['40169', '41250','25901','13450','51234', '43123']
+        var i = 0
+        var text = ''
+
+        do {
+            if(codigo[i].slice(0,1) === '4') {
+                text += codigo[i] + ','
+            } 
+            i++
+        } while(i < codigo.length)
+
+        document.getElementById('res').innerHTML = 'Os codigos ' + text + ' são validos'
+
+    </script>
+</body>
+</html>

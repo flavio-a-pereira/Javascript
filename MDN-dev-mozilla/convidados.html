@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convidados</title>
+    <style>
+        div {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="admitted"></div>  
+    <div id="refused"></div>
+
+    <script>
+        var people = ['Chris', 'Anne', 'Colin','Terri','Phil','Lola', 'Sam', 'Kay', 'Bruce']
+        var admitted = ''
+        var refused = ''
+
+        for(var i =0; i<=(people.length-1);i++ ) {
+            if((people[i] === 'Phil') || (people[i] === 'Lola')) {
+                refused += people[i] + ','
+                subref ='Refuse: ' +  refused.slice(0,refused.length-1) + '.'
+            } else {
+                admitted += people[i] + ','
+                subadm = 'Admit: ' + admitted.slice(0,admitted.length-1) + '.'
+            }
+        }
+
+        document.getElementById('admitted').innerHTML = subadm
+        document.getElementById('refused').innerHTML = subref
+
+    </script>
+</body>
+</html>

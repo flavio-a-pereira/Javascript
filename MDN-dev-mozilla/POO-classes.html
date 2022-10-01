@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+<body>
+    <h2>Contrutor com classes</h2>
+    <script>
+        class Person {
+            constructor(first, last, age, gender, interests) {
+                this.name = {
+                    first,
+                    last
+                }
+                this.age = age
+                this.gender = gender
+                this.interests = interests
+            }
+            greeting() {
+                console.log('Hi! I\'m ' + this.name.first)
+            }
+            farewell() {
+                console.log(this.name.first + ' has left the building . Bye for now!')
+            }
+        }
+
+        let han = new Person('Han', 'Salo', 25, 'male', ['Smuggling'])
+        console.log(han.greeting())
+
+        let leia = new Person('Leia', 'Organa', 19, 'female', ['Government'])
+        console.log(leia.farewell())
+
+        // criar uma subclasse Teacher que herda as propriedades da classe Person
+
+        class Teacher extends Person {
+            constructor(first, last, age, gender, interests, subject, grade) {
+                super(first, last, age, gender, interests)
+                this.subject = subject
+                this.grade = grade
+            }
+        }
+
+        let snape = new Teacher('Severus', 'Snape', 58, 'male', ['Potions'], 'Dark arts', 5)
+        console.log(snape.subject)
+    </script>
+</body>
+</html>

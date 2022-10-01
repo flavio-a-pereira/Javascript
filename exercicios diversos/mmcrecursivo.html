@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMC Recursivo</title>
+</head>
+<body>
+    <script>
+        function MDC(x,y){
+            if(y == 0) { return x}
+            else {return MDC(y,x%y)}             
+        }
+
+        console.log(MDC(360,305))
+    </script>
+</body>
+</html>

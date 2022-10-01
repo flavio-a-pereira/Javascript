@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p>Exemplo de prototype</p> 
+   <p id = 'res'></p>
+   <p>Exemplo de reduce() e reduceRight()</p>
+   <p id='res1'></p>
+   <p id = 'res2'></p>
+
+   <script>
+       Array.prototype.incluir = function() {
+           for(let i = 0; i < this.length; i++){
+               this[i] = this[i] + " da Silva "
+           }
+       }
+       const familia = ["João", "Bitencourt", "Maria"]
+       familia.incluir()
+         document.getElementById('res').innerHTML = familia
+       
+       const numeros = [1,2,3]
+       function subtrair(total,num) {
+          return total - num
+       }
+          document.getElementById('res1').innerHTML = numeros.reduce(subtrair)
+          document.getElementById('res2').innerHTML = numeros.reduceRight(subtrair)
+
+   </script>
+</body>
+</html>

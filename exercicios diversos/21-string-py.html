@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Crie uma string adicionando "Py" em frente desta string. Se a string começar com "Py" deverá retornar a string original</p>
+    <p><input type="text" id="text"></p>
+    <button onclick="check()">Clique</button>
+    <p id='res'></p>
+
+    <script>
+          function check() {
+            let cap = document.getElementById('text').value
+            let sub = cap.substring(0,2)
+            let Py = "Py"
+             if(sub != Py) {
+                document.getElementById('res').innerHTML = Py + cap  
+             } else {
+                 document.getElementById('res').innerHTML = cap
+             }
+            
+            
+          }
+    </script>
+</body>
+</html>

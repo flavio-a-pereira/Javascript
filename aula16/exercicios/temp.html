@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de temperaturas</title>
+</head>
+<body>
+        <p>Digite o valor da temperatura e o sistema: </p>
+       <p>
+           <input type="text" id='txtval'> graus
+           <input type="text" id='txttemp'> 
+            
+       </p>
+        
+           <input type="button" value="Checar" onclick="check()">
+    
+    <p id='res' ></p>
+    <script>
+        function check() {
+            let txtval = document.getElementById('txtval')
+            let txttemp = document.getElementById('txttemp')
+
+            if (txtval.value.length == 0 || txttemp.value.length == 0) {
+                window.alert('Erro') 
+            } else if(txttemp.value == "C") {
+                let cel = Number(txtval.value)
+                function toF(cel) {
+                    let tF = (cel * (9/5) + 32)
+                    return tF
+                }
+                document.getElementById('res').innerHTML = `A temperatura de ${cel} Celsius equivale a ` + toF(cel) + '  Farhenheit.'
+            } else if (txttemp.value == "F") {
+                let far = Number(txtval.value)
+                function toC(far) {
+                    let tC = (far - 32) * (5/9)
+                    return tC
+                }
+                document.getElementById('res').innerHTML = `A temperatura de ${far} Farhenheit equivale a ` + toC(far) + ' Celsius.'
+            }
+
+        }
+            
+
+        
+    </script>
+</body>
+</html>

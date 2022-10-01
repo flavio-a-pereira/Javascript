@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arraysoma</title>
+</head>
+<body>
+    <h2>Função para somar elementos de uma array de (start) até (end)</h2>
+    <div id="range"></div>
+    <h2>Soma dos itens de um array</h2>
+    <div id="sum"></div>
+    <h2>Função range modificada para receber terceiro argumento</h2>
+    <div id="res"></div>
+
+    <script>
+       
+        function range(start,end) {
+           var array = []
+            for (var i = start; i <= end; i ++) {
+                array.push(i)
+            }
+            return array
+        }
+        
+            function sum(array) {
+                let sum = 0
+                for(var i = 0; i <array.length;i++){
+                    sum += array[i]
+                }
+                return sum
+            }
+
+          function novoRange(inicio,fim,passo) {
+              var newarray = []
+              passo = ( typeof passo !=='undefined') ? passo : 1
+
+              if(passo > 0) {
+
+                 for (var i = inicio; i <= fim; i= i + passo){
+                  newarray.push(i)
+                 }
+               } else if (passo < 0){
+                   for (var i = inicio ; i >= fim; i= i + passo) {
+                       newarray.push(i)
+                   }            
+               }
+          
+              return newarray
+          }
+                   
+           
+        document.getElementById('range').innerHTML= '[' +range(1,10)+']'
+        document.getElementById('sum').innerHTML = sum(range(1,10))
+        document.getElementById('res').innerHTML = novoRange(5,2,-1)
+
+        
+
+
+    </script>
+</body>
+</html>

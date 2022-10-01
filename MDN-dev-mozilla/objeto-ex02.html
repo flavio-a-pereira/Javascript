@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    <script>
+        var band = {
+            name: 'U2',
+            nacionality: 'Irish',
+            genre: 'rock-pop',
+            members:['Bonovox','The Edge','Adam Clayton','Larry Mullen Jr'],
+            formed: 1976,
+            split: false,
+            albums: [
+                album1 = {
+                    name: 'Boy',
+                    realeased: 1980
+                },
+                album2 = {
+                    name: 'October',
+                    realeased: 1981
+                }
+            ]
+        }
+        
+        
+
+        var bandInfo = 'I like the band' + band.name + 'that is a' + band.nacionality + 'band.' + 'They are a band of' + band.genre + '.' + 'Formed by' + band.members + ',' + 'realeased their first two albums in' + band.albums[0]['realeased'] + '(' + band.albums[0]['name'] + ')' + 
+        'and' + band.albums[1]['realeased'] + '(' + band.albums[1]['name'] + ')' + 'respectivaly'
+
+        console.log(bandInfo) 
+    </script> 
+</body>
+</html>

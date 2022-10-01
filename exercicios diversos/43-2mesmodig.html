@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>43</title>
+</head>
+<body>
+    <p>Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit. </p>
+    <p id='res'></p>
+    <script>
+        let a = 11
+        let b = 22
+        let c = 30
+
+         document.getElementById('res').innerHTML = checar(a,b,c)
+
+        function checar(x,y,z) {
+            if(x > 0 && y > 0 && z > 0) {
+                return ((x % 10 ==  y % 10) || (x % 10 == z % 10) || (y % 10 == z % 10))
+            } else {
+                return false
+            }
+        }
+    </script> 
+</body>
+</html>

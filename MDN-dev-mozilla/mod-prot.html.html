@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudificar prototipos</title>
+</head>
+<body>
+    <h2>Vamos adicionar uma propriedade ao construtor com a propriedade prototype</h2>
+    <div id="obj"></div>
+    <script>
+        function Person(first, last, age, gender, interests) {
+            this.name = {
+                'first' : first,
+                'last': last
+            }
+             this.age = age
+             this.gender = gender
+             this.interests = interests
+             this.bio = function(){    
+                 
+                 if (gender === 'male') {
+                    alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old ' + ' and his interests are ' + this.interests + '.')
+                 } else if (gender === 'female') {
+                    alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old ' + ' and her interests are ' + this.interests + '.')
+                 }
+             } 
+             this.greeting = function() {
+                 alert('Hi! I\'m' + this.name.first + '.')
+               }    
+             
+        }
+
+        var person1 = new Person('Anatoly', 'Smith', 32, 'male',['music','skiing','dance'])
+        var person2 = new person1.constructor('Karen','Stephenson', 26, 'female', ['playng drums', 'mountain climbing'])
+
+        Person.prototype.farewell = function () {
+            alert(this.name.first + ' has left the building. Bye for now! ')
+        }   
+
+        console.log(person2.farewell())   
+    </script>
+</body>
+</html>

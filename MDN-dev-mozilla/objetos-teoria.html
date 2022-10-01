@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <script>
+        var pessoa = {
+            nome: {
+                primeiro: 'Bob',
+                ultimo: 'Smith'
+            },
+            idade: 32,
+            sexo: 'masculino',
+            interesses: ['musica','esquiar'],
+            bio: function(){
+                alert(this.nome.primeiro + '' + this.nome.segundo + 'tem' + this.idade + 'anos de idade. Ele gosta de' + this.interesses[0] + 'e' + this.interesses[1] + '.')
+            },
+            saudacao: function() {
+                alert('Oi! Eu sou' + this.nome[0] + '.')
+            }
+        }
+
+        var myDataName = 'altura'
+        var myDataValue = '1.75m'
+        pessoa[myDataName] = myDataValue
+
+        console.log(pessoa.altura)
+
+        pessoa.idade = 45
+        pessoa['nome']['ultimo'] = 'Cratchit'
+
+        console.log(pessoa.idade)
+        console.log(pessoa['nome']['ultimo'])
+
+        pessoa['olhos'] = 'castanho'
+        pessoa.despedida = function() {alert('Adeus a todos!')}
+
+        console.log(pessoa['olhos'])
+        console.log(pessoa.despedida())
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <script>
+        function cat(name, breed, color) {
+            this.name = name
+            this.breed = breed
+            this.color = color
+            this.greeting = function(){
+                console.log(' Hello said ' + this.name + ' the ' + this.breed) 
+            }
+        } 
+
+        const cat1 = new cat('Bertie','Cymric','White')
+        const cat2 = new cat('Elfie', 'Aphrodit Giant','ginger')
+
+        console.log(cat1.greeting())
+        console.log(cat2.greeting())
+    </script>
+</body>
+</html>

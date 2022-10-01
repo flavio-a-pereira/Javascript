@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar elemento </title>
+    <style>
+        p {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Buscar um elemento dentro de outro</h2>
+
+    <div id="main">
+
+    <p>Achando elementos HTML por Tagname </p>
+
+    <p>Neste exemplo buscaremos um elemento dentro de outro pelos métodos <strong>getElementsByTagName</strong> e por <strong>getElementById</strong>. Para isso, uma div main foi criada com 2 parágrafos. O script criará uma variável para buscar o conteudo deste. Logo depois outra variável buscara o parágrafo[0] desta div e monstrará uma mensagem na tela</p>
+    </div>
+
+    <p id="demo"></p>
+    <script>
+        var x = document.getElementById('main')
+        var y = x.getElementsByTagName('p')
+
+        document.getElementById("demo").innerHTML = 'Neste parágrafo, dentro da div "main" temos :' + y[0].innerHTML
+    </script>
+</body>
+</html>

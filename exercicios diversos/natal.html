@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Quantos dias faltam para o Natal?</p>
+    <p id='res'></p>
+    <script>
+        let hoje = new Date()
+        let milihoje = hoje.getTime()
+        let natal = new Date(hoje.getFullYear(),11,25)
+        let milinatal = natal.getTime()
+
+        let dif = ((milinatal-milihoje)/ (1000 * 60 * 60 * 24)) + 1
+
+
+        document.getElementById('res').innerHTML = `Faltam ${Math.round(dif)} dias para o Natal`
+    </script>
+</body>
+</html>

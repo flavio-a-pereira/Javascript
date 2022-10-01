@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construtor object'</title>
+</head>
+<body>
+    <script>
+        var person1 = new Object() // armazena um objeto vazio na variavel person1
+
+        person1.name = 'Chris'
+        person1['age'] = 38
+        person1.greeting = function () {
+            alert('Hi! I\'m ' + this.name + '.')
+        }
+
+        // passar um objeto literal como parametro na construção de um objeto
+        var person2 = new Object({
+            name: 'Ana',
+            age: 20,
+            hair: 'black'
+        })
+
+        console.log(person2.name)
+        
+    </script>
+</body>
+</html>

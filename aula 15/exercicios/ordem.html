@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem crescente sem função sort</title>
+</head>
+<body>
+    <p id='res'>
+        
+    </p>
+    <script>
+
+            function ordem(itens) {  
+            let n = itens.length
+            let checked 
+            
+            do {
+                checked = false
+                for (let i=0 ; i < n ; i++) {
+                    if (itens[i] > itens[i+1]) {
+                        var temp = itens[i]
+                        itens[i] = itens[i+1]
+                        itens[i+1] = temp 
+                        checked = true
+                    }
+                }
+            } while(checked)
+            return itens   
+        }
+        document.getElementById('res').innerHTML = ordem([20,1,33,4,48,9])
+        
+    </script>
+</body>
+</html>

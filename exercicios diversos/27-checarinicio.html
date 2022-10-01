@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27-Inicio com Java</title>
+</head>
+<body>
+    <p>Write a JavaScript program to check whether a string starts with 'Java' and false otherwise.</p>
+    <p><input type="text" name="nome" id="nome"></p>
+    <button onclick="clicar()">Click</button>
+    <p id='res'></p>
+    <script>
+        function clicar() {
+            let str = document.getElementById('nome').value
+
+            function checar(palavra) {
+                let sub = palavra.substring(0,4)
+                let j = "Java"
+                if(sub == j){
+                    return true
+                } else{
+                    return false
+                }
+            }
+          document.getElementById('res').innerHTML = checar(str) 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Dados dois números, pegar a parte inteira de ambos e se forem iguais retornar o triplo da soma.</p>
+    <p>
+        Digite o primeiro número: <input type="number" name="num1" id="tnum1">
+    </p>
+    <p>
+        Digite o segundo número: <input type="number" name="num2" id="tnum2">
+    </p>
+    <p id='res'></p>
+     <button onclick="calcular()">Check</button>
+   <script>
+        function calcular() {
+            let num1 = parseInt(document.getElementById('tnum1').value)
+            let num2 = parseInt(document.querySelector('input#tnum2').value) 
+            if (num1 == num2) {
+                let res = 3*(num1 + num2)
+                document.getElementById('res').innerHTML = ` O resultado é ${res}` 
+            } else{
+                document.getElementById('res').innerHTML = 'Os números não são iguais'
+            }
+
+              
+         
+        }
+   </script>
+</body>
+</html>

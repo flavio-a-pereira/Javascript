@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Dados dois números inteiros, verificar se um é positivo e o outro negativo</p>
+    <p>Primeiro número: <input type="number" name="num1" id="num1"></p>
+    <p>Segundo número: <input type="number" name="num2" id="num2"></p> 
+    <button onclick="check()">Check</button>
+    <p id='res'></p>
+    <script> 
+        function check() {
+            let num1 = parseInt(document.getElementById('num1').value)
+            let num2 = parseInt(document.querySelector('input#num2').value)
+
+            function posNeg(x,y) {
+                if((x>0) && (y<0) ||(x<0) && (y>0)) {
+                    return true
+                }else {
+                    return false
+                }
+            }
+            document.getElementById('res').innerHTML = posNeg(num1,num2)   
+        }
+    </script>
+</body>
+</html>

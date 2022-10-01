@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex inventado 1</title>
+</head>
+<body>
+    <h2>Criar dois contrutores com protótipo e herança entre eles</h2>
+    <script>
+        function Vehicle (fabricator, model, year) {
+            this.fabricator = fabricator
+            this.model = model
+            this.year = year
+        }
+
+        Vehicle.prototype.greeting = function() {
+            let greetingVehicle = 'Congratulatios, you bought a ' + this.fabricator + this.model + this.year
+            console.log(greetingVehicle)  
+        }
+        let vehicle1 = new Vehicle('Ford', 'Taurus', 2000)
+        console.log(vehicle1.greeting())
+
+        function Car (fabricator, model, year, color, milage) {
+            Vehicle.call(this, fabricator, model, year) 
+                this.color = color
+                this.milage = milage
+            }
+        Car.prototype=Object.create(Vehicle.prototype)
+        Object.defineProperty(Car.prototype, 'constructor', {
+            value:Car,
+            enumerable: false,
+            writable: true
+        })
+        
+        Car.prototype.greeting = function(){
+            let greetingCar =   this.color + this.milage + '.' +'When it reachs 7000 m, please change oil. '
+            console.log(greetingCar)
+        }
+
+        let car1 = new Car('Ford', 'Taurus', 2000, 'blue', 5000)
+        console.log(car1.greeting())
+
+
+    </script>
+</body>
+</html>

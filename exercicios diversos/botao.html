@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usando button</title>
+</head>
+<body>
+    <h2>Eventos em JS e HTML</h2>
+    <p>Clique aqui para mostrar a data</p>
+    <button onclick="displayDate()">Que horas são?</button>
+    <script>
+        function displayDate() {
+            window.document.getElementById('demo').innerHTML = Date()
+        }
+    </script>
+    <p id="demo"></p>
+
+    <p>Clique em "Tente de novo" para buscar o horário atual através de uma função.</p>
+    <p>No código deste exemplo constaram as linhas de HTML, e depois o script que definirá qual conteúdo a ser atribuido à função e o que esta retorna.</p>
+    <button id="btn">Tente de novo</button>
+    <p id='demo1'></p>
+    <script>
+        document.getElementById('btn').onclick = displayDat
+        function displayDat() {
+            document.getElementById('demo1').innerHTML = Date()
+        }
+    </script>
+</body>
+</html>

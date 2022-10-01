@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>36</title>
+</head>
+<body>
+    <p>Write a JavaScript program to check whether the last digit of the three given positive integers is same. </p>
+    <p id='res'></p>
+    <script>
+        let a = 454
+        let b = 9464
+        let c = 8784
+
+        let d = a.toString()
+        let e = b.toString()
+        let f = c.toString()
+
+        document.getElementById('res').innerHTML = ultimo(d,e,f)
+
+       function ultimo(x,y,z) {
+           let ctr = 0
+           if(x.charAt(x.length-1) == (y.charAt(y.length-1)) && (x.charAt(x.length-1) == (z.charAt(z.length-1)))) {
+               ctr = 1
+           }
+           if (ctr == 1) {
+               return true
+           }else {
+               return false
+           }
+       }
+        
+        
+    </script>
+</body>
+</html>

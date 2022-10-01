@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio de DOM pag.mundo js</title>
+
+</head>
+<body>
+   <h1>Título</h1>
+   <p>Subtítulo</p>
+   <br>
+   <p id='descricao'> Uma lista de itens</p>
+   <br>
+   <ul>
+       <li>Seus itens</li>
+       <ol>
+           <li class="itens">Livros</li>
+           <li class="itens">Caneta</li>
+           <li class="itens">Telefone</li>
+           <li class="itens">Carteira</li>
+       </ol>
+       <li>Outros itens</li>
+       <ol>
+           <li>N/A</li>
+       </ol>
+   </ul>
+      
+    <script>
+        var titulo = window.document.querySelector('h1')
+        window.document.write(titulo.innerText)
+        
+       var descricao = window.document.querySelector('p#descricao')
+       window.document.write(descricao.innerText)
+
+       var listaItens = window.document.querySelector('li.itens')
+       window.document.write(listaItens.innerText)
+    </script>    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequencia de Fibonacci</title>
+</head>
+<body>
+    <p>Digite um número n de tenha os n primeiros números da sequencia de Fibonacci</p>
+    <p id='res'></p>
+
+    <script>
+        function fibo(n) {
+            let itens = [1,1]
+            for (let i = 2;i< n;i ++) {
+                itens.push((itens[i-1])+(itens[i-2]))
+            }
+            return itens
+        }
+        document.getElementById('res').innerHTML = fibo(20)
+    </script>
+</body>
+</html>

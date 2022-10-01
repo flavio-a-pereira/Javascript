@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressiva</title>
+</head>
+<body>
+    <h1>Contagem progressiva com criação de parágrafo em cada iteração</h1>
+    <div id="saida"></div>
+    <script>
+        var i = 1
+
+        while (i <= 20) {
+            var para = document.createElement('p')
+            para.innerHTML = 'Esse é o ' + i + 'o elemento'
+            document.getElementById('saida').appendChild(para)
+            i ++
+        }
+
+    </script>
+</body>
+</html>

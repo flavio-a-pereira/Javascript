@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herança</title>
+</head>
+<body>
+    <h2>Vamos ver como um objeto herda propriedades de outro objeto com o conceito de classe filho(child)
+        e pai(parent)
+    </h2>
+        <script>
+            function Person(first, last, age, gender, interests) {
+                this.name = {
+                    first,
+                    last
+                }
+                this.age = age
+                this.gender = gender
+                this.interests = interests
+            }
+            Person.prototype.greetings = function () {
+                alert('Hi I\'m ' + this.name.first + ' . ')
+            }
+
+        // o construtor teacher() abaixo chama as propriedades do construtor Person() e cria uma
+        // propriedade subject propria para os professores
+
+        function Teacher(first, last, age, gender, interests, subject) {
+            Person.call(this, first, last, age, gender, interests)
+            this.subject = subject
+        } 
+        
+        Teacher.prototype = Object.create(Person.prototype)
+        Object.defineProperty(Teacher.prototype, 'constructor', {
+            value: Teacher,
+            emurable : false,
+            writable: true
+        })
+
+        Teacher.prototype.greeting = function () {
+            var prefix
+
+            if(this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M') {
+                prefix = 'Mr'
+            } else if (this.gender === 'female' || this.gender === 'Female' || this.gender === 'f' || this.gender === 'F'){
+                prefix = 'Ms'
+            } else {
+                prefix = 'Mx'
+            }
+            alert('Helo. My name is' + prefix + this.name.last + ' , and I teach ' + this.subject + '.')
+        }
+
+        var teacher1 = new Teacher('Dave', 'Grifin', 31, 'male', ['football', 'cookery'], 'matehmatics')
+
+        function Student(first, last, age, gender, interests) {
+            Person.call(this,first, last, age, gender, interests)
+        }
+
+        Student.prototype = Object.create(Person.prototype)
+        Object.defineProperty(Student.prototype, 'constructor', {
+            value:Student,
+            emurable: false,
+            writable: true
+        })
+
+        Student.prototype.greeting = function () {
+            alert('Hi, my name is ' + this.name.first)
+        }
+
+        var student1 = new Student('Maria', 'Aparecida', 20, 'female', ['dance', 'study'])
+
+        console.log(student1.age)
+        </script>
+
+</body>
+</html>

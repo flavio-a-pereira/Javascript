@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função recursiva</title>
+</head>
+<body>
+    <h2>Pegue um numero inteiro e some quantas vezes o numero 2 aparece</h2>
+    <script>
+        function recebeNumero(num) {
+            var str = num.toString()
+           
+            return str}
+        
+        var cont = 0
+
+                function temDois(str) {
+                    if(str.charAt(0) === '2') {cont += 1}
+                    if(str.charAt(0) != '2') {cont += 0}
+
+                     if(str.length > 0) {
+                         return temDois(str.slice(1,str.length))
+                     }
+                     return cont
+                }
+          console.log(temDois(recebeNumero(712321242)))
+        
+    </script>
+</body>
+</html>

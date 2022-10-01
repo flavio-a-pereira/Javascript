@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios com objeto</title>
+</head>
+<body>
+    <script>
+        function arrayToList(arr) {
+            var list = null
+            for(var i = arr.length-1 ; i>=0; i--) {
+                list = {value: arr[i], rest:list}
+            }   
+            
+            return  list
+        }
+        // a variavel node recebe um a lista, e enquanto esta condição for verdadeira
+        //  o valor da variavel value da lista é inserido na array e depois ela assume o
+        // valor do rest da lista seguinte
+        function listToArray(list) {
+            var arr = []
+            for(var node = list; node; node=node.rest){
+                arr.push(node.value)
+            }
+            return arr
+        }
+
+        function prepend(element, list) {
+
+            var list = {value:element, rest:list}
+
+            return list 
+        }
+
+        function nth(list,num) {
+            var arr = []
+            for(var node = list; node; node=node.rest){
+                arr.push(node.value)
+            }
+           
+            if((arr.length) >= (num + 1)) {
+                return arr[num]
+            }else {
+                return undefined
+            }
+        }
+
+        function nnth(list,n) {
+            if(!list) return undefined
+            else if(n==0) return list.value
+            else return nnth(list.rest, n-1) 
+        }
+        /* var list = {
+            value: 1
+            rest:list {
+                value: 2
+                rest: list {
+                    value: 3
+                    rest: null
+                    }
+                }
+           } 
+           inicio f(list, 0) - list.value = 1 sem problemas !
+           inicio f(list, 1) - passa pela primeira condição e retorna (list.rest:{ value 2, rest:list},0)
+           retorna para inicio e encontra list.value = 2
+           inicio f(list,2) - passa pela primeira condição e retorna (list.rest:{ value 2, rest:list},1))
+           retorna para inicio, não atende as 2 primeiras condições e retorna(list.rest:{ value 3, rest:null},0) retorna para o inicio e encontra list.value = 3
+         */
+        console.log(arrayToList([10,20,30]))
+        console.log(listToArray(arrayToList([10,20,30])))
+        console.log(prepend(10,prepend(20, null)))
+        console.log(nth(arrayToList([10,20,30]), 1))
+        console.log(nnth(arrayToList([1,2,3]), 2))
+    </script>
+</body>
+</html>

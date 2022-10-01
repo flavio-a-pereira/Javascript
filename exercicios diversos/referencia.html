@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p id = 'res'></p>
+<p id = 'res1'></p>
+<p id = 'res2'></p>
+<p id = 'res3'></p>
+<p id = 'res4'></p>
+<body>
+    <script>
+        const func1 = ["Lilian","Edi"]
+        const func2 = ["Ket","Daniela"]
+        const func3 = ["Ana","Luciano"]
+        const func = func1.concat(func2,func3)
+        document.getElementById('res').innerHTML = func   // junta arrays
+
+        const arr = ["a","b","c","d","e","f"]
+        document.getElementById('res1').innerHTML = arr.copyWithin(2,0,2) // copia itens da array e sobrepoe
+
+        const dias = ["segunda","terça","quarta"]
+        const d = dias.entries()
+          for(let i of d) {
+              document.getElementById('res2').innerHTML += i + "<br>" // pares indice, valor
+          }
+
+        const pares = [
+            {nome:"Ket", idade:"18"},
+            {nome:"Daniela", idade:"20"},
+            {nome:"Lilian", idad:"22"}
+        ]
+        function igual(el,index,arr) {
+             if(index === 0){
+                 return true
+             } else {
+                 return (el.idade === arr[index-1].idade)      
+             }
+        }
+           document.getElementById('res3').innerHTML = pares.every(igual) // verifica se todos itens são iguais
+        
+        const num = [20,30,32,40]
+        function maior(value) {
+              return value > 25
+        }
+          document.getElementById('res4').innerHTML = num.filter(maior) // gera uma array com os dados que satisfazem a condição
+          
+    </script>
+</body>
+</html>

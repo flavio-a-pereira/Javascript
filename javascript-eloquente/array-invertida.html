@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array invertida</title>
+</head>
+<body>
+   <h2>Dois exemplos de array invertida</h2> 
+   <h2>Exemplo 1</h2>
+   <div id="ex1"></div>
+   <H2>Exemplo 2</H2>
+   <div id="ex2"></div>
+
+   <script>
+       function reverseArray(array) {
+           var invertida = []
+           
+           for (var i= 0; i<= array.length-1;i++){
+           invertida.unshift(array[i])
+           }
+         return invertida 
+       }
+       document.getElementById('ex1').innerHTML = reverseArray(['A','B','C'])
+
+       function reverseArrayInPlace(arr) {
+           
+            for(var i = 0; i < Math.floor(arr.length/2); i++) {
+                var aux = arr[i]
+                arr[i] = arr[arr.length-1-i]
+                arr[arr.length-1-i] = aux
+                
+            }
+            return arr
+       }
+         document.getElementById('ex2').innerHTML = reverseArrayInPlace([1,2,3,4,5])
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerciício 1</title>
+    <style>
+        div {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Exercício para treinar laços FOR e FOR IN</h1>
+      
+    
+    <div>
+        Sua tia, professora, encomendou um trabalho para você.
+        Ela quer que você crie um script que vai pedir o número de alunos da turma (peça via prompt mesmo).
+        Em seguida, vai perguntar qual foi a nota de cada um deles.
+        No final, seu script deve fornecer a média geral da turma.
+        Use array para armazenar as notas, laço FOR para preencher cada elemento do array e um laço FOR IN para calcular a soma das notas (cálculo necessário para calcular a média).
+    </div>
+     <div id='res'>
+
+     </div> 
+    <script>
+        let numalunos = Number(window.prompt('Quantos alunos tem na sala'))
+        let res = document.querySelector('div#res')
+        let vetnot = []
+
+        for (i = 1; i<= numalunos; i++) {
+            let notas = Number(window.prompt('Digite a nota'))
+            vetnot.push(notas)
+        }
+        let soma = 0
+        for (let pos in vetnot) {
+            soma += vetnot[pos]
+        }
+        let tot = vetnot.length
+        let media = soma / tot
+
+        res.innerHTML = ''
+        res.innerHTML = `A média geral da turma é ${media}`
+
+    </script>
+</body>
+</html>

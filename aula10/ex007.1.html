@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right, white, blue);
+            font-family: sans-serif;
+            font-size: 10pt;
+        }
+        h1 {
+            font-family: serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exerício de soma de números</h1>
+    <p>Saldo inicial   <input type="number" name="si" id="si"></p>
+    <p>Deposito do dia <input type="number" name="deposito" id="dep"></p>
+    <p>Vendas Kettlyn  <input type="number" name="fatk" id="fatk"></p>
+    <p>Vendas Lilian   <input type="number" name="fatl" id="fatl"></p>
+    <p>Vendas Daniela  <input type="number" name="fatd1" id="fatd1"></p>
+    <p>Vendas Daniela  <input type="number" name="fatd2" id="fatd2"></p>
+    <input type="button" value="Total" onclick="somar()">
+    <div id="ns" onmouseenter="mudar()">Novo saldo</div>
+    <script>
+        function somar() {
+      var tsi = window.document.getElementById('si')
+      var tdep = window.document.querySelector('input#dep')
+      var tfatk = window.document.getElementById('fatk')
+      var tfatl = window.document.getElementById('fatl')
+      var tfatd1 = window.document.querySelector('input#fatd1')
+      var tfatd2 = window.document.querySelector('input#fatd2')
+      var si = Number(tsi.value)
+      var dep = Number(tdep.value)
+      var fatk = Number(tfatk.value)
+      var fatl = Number(tfatl.value)
+      var fatd1 = Number(tfatd1.value)
+      var fatd2 = Number(tfatd2.value)
+      var nsaldo = si + dep + fatk + fatl + fatd1 + fatd2
+      ns.innerHTML = nsaldo
+        }
+        function mudar() {
+        var c = window.document.getElementById('ns')
+        c.style.fontSize = '20pt'
+        }
+    </script>
+</body>
+</html>
